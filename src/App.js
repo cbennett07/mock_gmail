@@ -16,7 +16,6 @@ class App extends Component {
             isComposing: false,
 
         }
-
     }
 
     async componentDidMount() {
@@ -44,7 +43,10 @@ class App extends Component {
                     />}
                 {this.state.selectedEmail || this.state.isComposing ?
                     <EmailDetail isComposing={this.state.isComposing}
-                                 email={this.state.selectedEmail}/> : <></>}
+                                 email={this.state.selectedEmail}
+                                 onChange={(input) => this.handleSearchOnChange(input)}
+
+                    /> : <></>}
 
             </div>
         );
